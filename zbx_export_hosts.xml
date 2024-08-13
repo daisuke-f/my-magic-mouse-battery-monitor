@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <groups>
+        <group>
+            <name>Client Computers</name>
+        </group>
+    </groups>
+    <hosts>
+        <host>
+            <host>mymac</host>
+            <groups>
+                <group>
+                    <name>Client Computers</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <applications>
+                <application>
+                    <name>Peripheral</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Keyboard Battery Percent</name>
+                    <type>TRAP</type>
+                    <key>keyboard.battery</key>
+                    <delay>0</delay>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Peripheral</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Mouse Battery Percent</name>
+                    <type>TRAP</type>
+                    <key>mouse.battery</key>
+                    <delay>0</delay>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Peripheral</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+            <inventory_mode>AUTOMATIC</inventory_mode>
+        </host>
+    </hosts>
+    <graphs>
+        <graph>
+            <name>Keyboard Battery Percent</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>mymac</host>
+                        <key>keyboard.battery</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Mouse Battery Percent</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>mymac</host>
+                        <key>mouse.battery</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>

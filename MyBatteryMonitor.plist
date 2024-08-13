@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>asia.sarapan.MyBatteryMonitor</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/bin/zsh</string>
+            <string>/path/to/my-magic-mouse-battery-monitor/MyBatteryMonitor.sh</string>
+        </array>
+        <key>StandardErrorPath</key>
+        <string>/path/to/my-magic-mouse-battery-monitor/error.log</string>
+        <key>StandardOutPath</key>
+        <string>/path/to/my-magic-mouse-battery-monitor/output.log</string>
+        <key>StartInterval</key>
+        <integer>3600</integer>
+    </dict>
+</plist>
