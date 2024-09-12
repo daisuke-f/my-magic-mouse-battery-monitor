@@ -36,6 +36,13 @@
                             <name>Peripheral</name>
                         </application>
                     </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{timeleft(1w,,0)}&lt;1w</expression>
+                            <name>Keyboard battery gets empty in 1 week</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Mouse Battery Percent</name>
@@ -48,6 +55,13 @@
                             <name>Peripheral</name>
                         </application>
                     </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{timeleft(1w,,0)}&lt;1w</expression>
+                            <name>Mouse battery gets empty in 1 week</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
                 </item>
             </items>
             <inventory_mode>AUTOMATIC</inventory_mode>
