@@ -21,12 +21,12 @@ mylog "Start sending"
 # get battery levels
 mouse_level=$(
   ioreg -a -r -n AppleDeviceManagementHIDEventService \
-  | xmllint --xpath '/plist/array/dict/key[text()="Product"]/following-sibling::*[1][text()="Magic Mouse"]/../key[text()="BatteryPercent"]/following-sibling::*[1]/text()' -
+  | xmllint --xpath '/plist/array/dict/key[text()="Product"]/following-sibling::*[1][text()="Magic Mouse" or text()="System Administrator’s Mouse"]/../key[text()="BatteryPercent"]/following-sibling::*[1]/text()' -
 )
 
 keyboard_level=$(
   ioreg -a -r -n AppleDeviceManagementHIDEventService \
-  | xmllint --xpath '/plist/array/dict/key[text()="Product"]/following-sibling::*[1][text()="Magic Keyboard"]/../key[text()="BatteryPercent"]/following-sibling::*[1]/text()' -
+  | xmllint --xpath '/plist/array/dict/key[text()="Product"]/following-sibling::*[1][text()="Magic Keyboard" or text()="System Administrator’s Keyboard"]/../key[text()="BatteryPercent"]/following-sibling::*[1]/text()' -
 )
 
 # create JSON containing monitored data
