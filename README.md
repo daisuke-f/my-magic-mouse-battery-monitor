@@ -36,12 +36,13 @@ Next, import `zbx_export_hosts.xml` in the _Host_ section under the _Data collec
 
 ## Configure script file
 
-You also have to configure for the script file if you are using own (not Docker Compose version) Zabbix server. The following shell variables in the script should be changed to point to your Zabbix server.
+Copy the example configuration file. The generated `MyBatteryMonitor.conf` file is local configuration and is not tracked by Git.
 
 ```
-SERVER=127.0.0.1
-PORT=10051
+cp MyBatteryMonitor.conf.example MyBatteryMonitor.conf
 ```
+
+If you are using your own (not Docker Compose version) Zabbix server, edit `SERVER` and `PORT` in `MyBatteryMonitor.conf` to point to your Zabbix server.
 
 ## Test script file
 
@@ -65,7 +66,13 @@ You can also see these values in the _Latest data_ section of Zabbix web interfa
 
 The script should be executed automatically not manually. So, we will use _launchd_ daemon on macOS to run it as a local service.
 
-The `MyBatteryMonitor.plist` file contains the definition of the service. Note that you must edit this file to replace `/path/to/` into the actual installation directory.
+Copy the launchd service definition template.
+
+```
+cp MyBatteryMonitor.plist.example MyBatteryMonitor.plist
+```
+
+Edit `MyBatteryMonitor.plist` to replace `/path/to/` with the actual installation directory. The generated `MyBatteryMonitor.plist` file is local configuration and is not tracked by Git.
 
 After editing the file, execute this command to register the service.
 

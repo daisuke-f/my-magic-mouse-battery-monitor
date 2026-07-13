@@ -1,2 +1,4 @@
 *.log
 .codex/
+MyBatteryMonitor.conf
+MyBatteryMonitor.plist

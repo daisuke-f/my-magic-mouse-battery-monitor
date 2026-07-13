@@ -4,6 +4,11 @@
 SERVER=127.0.0.1
 PORT=10051
 
+CONFIG_FILE="$(dirname "$0")/MyBatteryMonitor.conf"
+if [ -f "$CONFIG_FILE" ]; then
+  . "$CONFIG_FILE"
+fi
+
 # Zabbix Host/Item config
 HOST_KEY="mymac"
 MOUSE_KEY="mouse.battery"
