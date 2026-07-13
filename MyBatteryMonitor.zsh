@@ -18,7 +18,7 @@ LOGGING=1
 
 mylog() {
   if [ "$LOGGING" -ne 1 ]; then return; fi
-  echo '['`date "+%Y-%m-%d %H:%M:%S"`']' "$1"
+  printf '[%s] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$1"
 }
 
 mylog "Start sending"
@@ -55,6 +55,7 @@ resp=`printf "ZBXD\1${datalen}\0\0\0\0%s" "$data" | nc "$SERVER" "$PORT"`
 
 rc=$?
 
-mylog "Response: $resp"
+resp_for_log=$(printf '%s' "$resp" | perl -pe 's/([\x00-\x08\x0B-\x1F\x7F])/sprintf("\\x%02X", ord($1))/ge')
+mylog "Response: $resp_for_log"
 
 exit $rc

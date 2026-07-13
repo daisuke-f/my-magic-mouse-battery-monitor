@@ -52,12 +52,12 @@ Let's run the script manually to check if everything goes on correctly.
 ./MyBatteryMonitor.zsh
 ```
 
-You will get output like this if there is no trouble. "Response:" indicates that the Zabbix server successfully receives 2 monitoring item values (mouse.battery and keyboard.battery) sent from the script.
+You will get output like this if there is no trouble. "Response:" indicates that the Zabbix server successfully receives 2 monitoring item values (mouse.battery and keyboard.battery) sent from the script. Control characters in the Zabbix response header are escaped as hexadecimal strings so that the log remains plain text.
 
 ```
 [2024-08-13 17:26:02] Start sending
 [2024-08-13 17:26:02] Request: {"request":"sender data","data":[{"host":"mymac","key":"mouse.battery","value":"98"},{"host":"mymac","key":"keyboard.battery","value":"45"}]}
-[2024-08-13 17:26:02] Response: ZBXDZ{"response":"success","info":"processed: 2; failed: 0; total: 2; seconds spent: 0.000897"}
+[2024-08-13 17:26:02] Response: ZBXD\x01Z\x00\x00\x00\x00\x00\x00\x00{"response":"success","info":"processed: 2; failed: 0; total: 2; seconds spent: 0.000897"}
 ```
 
 You can also see these values in the _Latest data_ section of Zabbix web interface.
