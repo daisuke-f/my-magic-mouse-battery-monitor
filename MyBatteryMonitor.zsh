@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Zabbix Server/Proxy config
 SERVER=127.0.0.1

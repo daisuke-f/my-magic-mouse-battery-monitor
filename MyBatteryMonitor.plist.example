@@ -6,8 +6,7 @@
         <string>asia.sarapan.MyBatteryMonitor</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/bin/zsh</string>
-            <string>/path/to/my-magic-mouse-battery-monitor/MyBatteryMonitor.sh</string>
+            <string>/path/to/my-magic-mouse-battery-monitor/MyBatteryMonitor.zsh</string>
         </array>
         <key>StandardErrorPath</key>
         <string>/path/to/my-magic-mouse-battery-monitor/error.log</string>

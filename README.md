@@ -49,7 +49,7 @@ If you are using your own (not Docker Compose version) Zabbix server, edit `SERV
 Let's run the script manually to check if everything goes on correctly.
 
 ```
-./MyBatteryMonitor.sh 
+./MyBatteryMonitor.zsh
 ```
 
 You will get output like this if there is no trouble. "Response:" indicates that the Zabbix server successfully receives 2 monitoring item values (mouse.battery and keyboard.battery) sent from the script.
